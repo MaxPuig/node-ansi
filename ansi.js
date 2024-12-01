@@ -602,15 +602,15 @@ var ansiCanvas = function(width, height, scale, quality) {
 
 	var initCanvas = function() {
 
-		backgroundCanvas = new Canvas(properties.width, properties.height);
+		backgroundCanvas = new Canvas.Canvas(properties.width, properties.height);
 		backgroundContext = backgroundCanvas.getContext('2d');
 		backgroundContext.fillStyle = properties.colors[0];
 		backgroundContext.fillRect(0, 0, properties.width, properties.height);
 
-		foregroundCanvas = new Canvas(properties.width, properties.height);
+		foregroundCanvas = new Canvas.Canvas(properties.width, properties.height);
 		foregroundContext = foregroundCanvas.getContext('2d');
 
-		mergeCanvas = new Canvas(Math.ceil(properties.width * properties.scale), Math.ceil(properties.height * properties.scale));
+		mergeCanvas = new Canvas.Canvas(Math.ceil(properties.width * properties.scale), Math.ceil(properties.height * properties.scale));
 		mergeContext = mergeCanvas.getContext('2d');
 		mergeContext.patternQuality = properties.qualityMap[properties.quality];
 		mergeContext.filter = properties.qualityMap[properties.quality];
